@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Header from './components/base_components/header'
+import Landing from './components/landing'
+import { BrowserRouter as Router, Link, Render, Route } from 'react-router-dom'
 
 class App extends Component {
   componentDidMount() {
@@ -9,9 +11,12 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Header />
-      </div>
+      <Router>
+        <div className="App">
+          <Header />
+          <Route exact={true} path='/' component={Landing} />
+        </div>
+      </Router>
     );
   }
 }
