@@ -2,9 +2,6 @@ import React, { Component } from 'react'
 import CardTitle from './cardTitle'
 
 class Card extends Component {
-  constructor(props) {
-    super(props)
-  }
   render() {
     console.log('this.props', this.props);
     return (
