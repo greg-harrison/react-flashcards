@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './style/App.css'
 import Header from './components/base_components/header'
 import Landing from './components/landing'
 import Stack from './components/stack'
