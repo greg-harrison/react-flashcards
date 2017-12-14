@@ -9,7 +9,7 @@ class Landing extends Component {
 
   render() {
     return (
-      <div className="landing container m-0">
+      <div className="landing m-0">
         <h1>Hello world</h1>
       </div>
     )
