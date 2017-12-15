@@ -9,6 +9,7 @@ class App extends Component {
   componentDidMount() {
     console.log('mounted');
     // Set the initial data from Redux here
+    // At some point we need to check the MatchPath to set 'active' on the header items
   }
 
   render() {
