@@ -12,9 +12,10 @@ class Landing extends Component {
   }
 
   landingStackWData() {
-    map(MockData, (item, index) => {
+    console.log('map', map);
+    return map(MockData, (item, index) => {
       console.log('item', item);
-      return <Stack item={item} />
+      return <Stack item={item} match="" />
     })
   }
 
@@ -26,7 +27,7 @@ class Landing extends Component {
     return (
       <div className="landing m-0">
         <h1>Hello world</h1>
-        {this.landingStackWData}
+        {this.landingStackWData()}
       </div>
     )
   }
