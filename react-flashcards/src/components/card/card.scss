@@ -1,0 +1,11 @@
+.card {
+  width: 90%;
+  margin: 0 auto;
+  padding: 2rem;
+
+  .card-side {
+    position: absolute;
+    top: 0;
+    font-weight: bold;
+  }
+}

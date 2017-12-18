@@ -12,21 +12,14 @@ class Landing extends Component {
   }
 
   landingStackWData() {
-    console.log('map', map);
     return map(MockData, (item, index) => {
-      console.log('item', item);
-      return <Stack item={item} match="" />
+      return <Stack item={item} />
     })
-  }
-
-  componentDidMount() {
-    console.log('test');
   }
 
   render() {
     return (
       <div className="landing m-0">
-        <h1>Hello world</h1>
         {this.landingStackWData()}
       </div>
     )

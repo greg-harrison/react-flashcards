@@ -1,14 +1,39 @@
 import React, { Component } from 'react'
-import CardTitle from './cardTitle'
+import './card.css'
+
+function CardFront({ faceup, children }) {
+  return faceup ? children : null
+}
+function CardBack({ faceup, children }) {
+  return faceup ? null : children
+}
 
 class Card extends Component {
+  static Front = CardFront
+  static Back = CardBack
+  static defaultProps = { onToggle: () => { } }
+
+  state = { faceup: true }
+
+  toggle = () =>
+    this.setState(
+      ({ faceup }) => ({ faceup: !faceup }),
+      () => this.props.onToggle(this.state.faceup),
+    )
+
   render() {
-    console.log('this.props', this.props);
+    const children = React.Children.map(
+      this.props.children,
+      child =>
+        React.cloneElement(child, {
+          faceup: this.state.faceup,
+          toggle: this.toggle,
+        })
+    )
+
     return (
-      <div className="card container m-0">
-        <CardTitle title={this.props.card.title} />
-        <p>{this.props.card.front}</p>
-        <p>{this.props.card.back}</p>
+      <div className="card container" onClick={this.toggle}>
+        {children}
       </div>
     )
   }

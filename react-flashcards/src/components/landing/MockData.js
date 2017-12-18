@@ -7,7 +7,8 @@
 
 const MockData = [
   {
-    "title": "Initial Stack",
+    "title": "Initial Stack - Click to flip over",
+    "id": '19021900',
     "cards": [
       {
         "id": '1993103',
