@@ -9,8 +9,8 @@ router.get('/list/:user_id', () => {
 
 // Creation Routes
 router.post('/create', middleware.verifyUserAuth, () => {
-  console.log('test2');
 })
+
 router.put('/update/:stack_id', () => {
   console.log('test3');
 })
