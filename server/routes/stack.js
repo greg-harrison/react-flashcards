@@ -8,8 +8,7 @@ router.get('/list/:user_id', () => {
 })
 
 // Creation Routes
-router.post('/create', middleware.verifyUserAuth, () => {
-})
+router.post('/create', middleware.verifyUserAuth, stackQueries.createStack)
 
 router.put('/update/:stack_id', () => {
   console.log('test3');
