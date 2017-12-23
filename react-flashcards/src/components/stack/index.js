@@ -3,7 +3,6 @@ import Card from '../card'
 import { map } from 'lodash'
 
 const Stack = ({ item }) => {
-
   // Parameters passed through React-Router are stored in the match.params value of the component
   let builtStackList = map(
     item.cards,
