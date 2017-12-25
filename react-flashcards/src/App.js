@@ -11,6 +11,7 @@ class App extends Component {
     console.log('mounted');
     // Set the initial data from Redux here
     // At some point we need to check the MatchPath to set 'active' on the header items
+    console.log('this.props', this.props);
   }
 
   render() {
