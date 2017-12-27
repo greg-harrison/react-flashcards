@@ -1,11 +1,11 @@
 import React from 'react';
 import './header.css'
 
-const Header = () => {
+const Header = ({ isLoggedIn }) => {
   return (
-    <div className="header">
+    isLoggedIn && < div className="header" >
       Header
-    </div>
+      </div >
   )
 }
 
