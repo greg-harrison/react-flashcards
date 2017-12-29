@@ -3,9 +3,10 @@ import './header.css'
 
 const Header = ({ isLoggedIn }) => {
   return (
-    isLoggedIn && < div className="header" >
+    isLoggedIn &&
+    < div className="header" >
       Header
-      </div >
+    </div >
   )
 }
 
