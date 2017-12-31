@@ -22,7 +22,6 @@ class Landing extends Component {
 
   landingUserStacks() {
     return map(MockStackList, (item, index) => {
-      console.log('item', item);
       return <StackList list={item} />
     })
   }
