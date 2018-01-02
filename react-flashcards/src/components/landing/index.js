@@ -22,6 +22,8 @@ class Landing extends Component {
 
   landingUserStacks() {
     return map(MockStackList, (item, index) => {
+      console.log('test');
+      console.log('item', item);
       return <StackList list={item} />
     })
   }
@@ -29,7 +31,6 @@ class Landing extends Component {
   render() {
     return (
       <div className="landing m-0">
-        {/* {this.landingStackWData()} */}
         {this.landingUserStacks()}
       </div>
     )
