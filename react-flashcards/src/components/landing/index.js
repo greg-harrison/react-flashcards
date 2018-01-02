@@ -22,15 +22,13 @@ class Landing extends Component {
 
   landingUserStacks() {
     return map(MockStackList, (item, index) => {
-      console.log('test');
-      console.log('item', item);
       return <StackList list={item} />
     })
   }
 
   render() {
     return (
-      <div className="landing m-0">
+      <div className="landing w-100 m-0">
         {this.landingUserStacks()}
       </div>
     )
