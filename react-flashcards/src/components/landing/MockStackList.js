@@ -1,3 +1,7 @@
+// StackList
+//   Stack
+//     Card
+
 const MockStackList = [
   {
     "id": "1210201",

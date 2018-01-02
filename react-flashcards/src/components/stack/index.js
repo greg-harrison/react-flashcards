@@ -10,7 +10,6 @@ const Stack = ({ item }) => {
       return (
         <Card
           key={item.id}>
-          <div>I'm a stack</div>
           <Card.Front>
             <span className="card-side">
               Front
