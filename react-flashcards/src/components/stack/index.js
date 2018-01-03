@@ -1,11 +1,12 @@
 import React from 'react';
 import Card from '../card'
 import { map } from 'lodash'
+import MockData from '../landing/MockData'
 
-const Stack = ({ item }) => {
-  // Parameters passed through React-Router are stored in the match.params value of the component
+// To be Connected by redux
+const Stack = () => {
   let builtStackList = map(
-    item.cards,
+    MockData[0].cards,
     (item) => {
       return (
         <Card
@@ -33,7 +34,7 @@ const Stack = ({ item }) => {
 
   return (
     <div>
-      {item.title}
+      {MockData[0].title}
       {builtStackList}
     </div>
   )

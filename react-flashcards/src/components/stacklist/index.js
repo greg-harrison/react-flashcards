@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 const StackList = ({ list }) => (
-  <div key={list.id} className="card p-0">
+  <Link
+    to={'/stack/' + list.id}
+    key={list.id}
+    className="card p-3" >
     <div className="stackTitle ">
       {list.title}
     </div>
     <div className="createdDate ">
       {list.numCards}
     </div>
-  </div>
+  </Link >
 )
 
 export default StackList

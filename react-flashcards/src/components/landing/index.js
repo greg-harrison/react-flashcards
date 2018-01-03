@@ -10,14 +10,7 @@ class Landing extends Component {
   constructor(props) {
     super(props)
 
-    this.landingStackWData = this.landingStackWData.bind(this)
     this.landingUserStacks = this.landingUserStacks.bind(this)
-  }
-
-  landingStackWData() {
-    return map(MockData, (item, index) => {
-      return <Stack item={item} />
-    })
   }
 
   landingUserStacks() {
