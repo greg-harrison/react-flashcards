@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import './stackList.css';
 
 const StackList = ({ list }) => (
-  <Link
-    to={'/stack/' + list.id}
-    key={list.id}
-    className="card p-3" >
-    <div className="stackTitle ">
-      {list.title}
-    </div>
-    <div className="createdDate ">
-      {list.numCards}
-    </div>
-  </Link >
+  <div className="stackListItem card p-0">
+    <Link
+      to={'/stack/' + list.id}
+      className="row p-3"
+      key={list.id}>
+      <span className="stackTitle col-6">
+        {list.title}
+      </span>
+      <span className="createdDate col-6 text-right">
+        Count: {list.numCards}
+      </span>
+    </Link >
+  </div>
 )
 
 export default StackList
