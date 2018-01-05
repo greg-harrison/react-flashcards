@@ -5,6 +5,7 @@ import { map } from 'lodash'
 import MockData from './MockData'
 import MockStackList from './MockStackList'
 import StackList from '../stacklist'
+import Header from '../base_components/header'
 
 class Landing extends Component {
   constructor(props) {
@@ -22,6 +23,7 @@ class Landing extends Component {
   render() {
     return (
       <div className="landing w-100 m-0">
+        <Header isLoggedIn={true} />
         {this.landingUserStacks()}
       </div>
     )
