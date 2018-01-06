@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './login.css'
 
 export default class Login extends Component {
@@ -16,6 +17,7 @@ export default class Login extends Component {
               </label>
             </form>
           </div>
+          <Link to="/signup">Don't have an account? Sign up!</Link>
           <div className="card-footer">
             <button className="btn btn-main" type="submit">Login</button>
           </div>
