@@ -1,5 +1,12 @@
+@import '../../../style/imports/_variables.scss';
+
 .login {
+  color: $black-purple;
   .card {
     height: 25%; 
+  }
+  .btn-main{
+    background-color: $pale-purple;
+    color: $black-purple;
   }
 }
