@@ -1,16 +1,5 @@
 import types from './types';
 
-/* State Shape
-{
-  user: {
-    id: '',
-    name: '',
-    email: '',
-    password: ''
-  }
-}
-*/
-
 const initialState = {
   user: {
     id: '',
@@ -36,6 +25,7 @@ const recordListReducer = (state = initialState, action) => {
 
     case types.INPUT_USER_NAME: {
       // Updating the typing of a user name
+
     }
 
     case types.INPUT_USER_EMAIL: {
