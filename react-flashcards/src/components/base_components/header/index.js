@@ -4,8 +4,10 @@ import './header.css'
 const Header = ({ isLoggedIn }) => {
   return (
     isLoggedIn &&
-    < div className="header" >
-      Header
+    <div className="header">
+      <span>
+        Header
+      </span>
     </div >
   )
 }

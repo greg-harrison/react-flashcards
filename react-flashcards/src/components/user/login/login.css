@@ -1,2 +1,7 @@
-.login .card {
-  height: 25%; }
+.login {
+  color: #060011; }
+  .login .card {
+    height: 25%; }
+  .login .btn-main {
+    background-color: #E6E1EF;
+    color: #060011; }
