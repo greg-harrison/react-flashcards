@@ -1,7 +1,6 @@
 .login {
-  color: #060011; }
-  .login .card {
-    height: 25%; }
+  color: #060011;
+  width: 100%; }
   .login .btn-main {
     background-color: #E6E1EF;
     color: #060011; }
