@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Link, Render, Route } from 'react-router-dom'
 
 import './style/App.css'
+import './style/UserEntry.css'
 
 import Landing from './components/landing'
 import Login from './components/user/login'
@@ -25,8 +26,10 @@ const fakeAuth = {
 const App = () => (
   <Router>
     <div className="app-wrapper">
-      <Route exact={true} path='/login' component={Login} />
-      <Route exact={true} path='/signup' component={Signup} />
+      <div className="user-entry-wrapper">
+        <Route exact={true} path='/login' component={Login} />
+        <Route exact={true} path='/signup' component={Signup} />
+      </div>
 
       <ProtectedRoute auth={fakeAuth} path='/' component={Landing} />
       <ProtectedRoute auth={fakeAuth} path='/stack/:stackId' component={Stack} />

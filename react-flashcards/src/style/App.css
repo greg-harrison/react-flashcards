@@ -6666,3 +6666,12 @@ a.text-dark:focus, a.text-dark:hover {
 .app-wrapper {
   height: 100%;
   background-color: lightgrey; }
+  .app-wrapper .user-entry-wrapper {
+    background: url("../assets/purple-bg.jpg");
+    background-size: cover; }
+    .app-wrapper .user-entry-wrapper .user-entry .card-header {
+      background-color: #ffffff;
+      border-bottom: none; }
+    .app-wrapper .user-entry-wrapper .user-entry .card-footer {
+      background-color: #ffffff;
+      border-top: none; }
