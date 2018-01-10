@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux'
+import {
+  mapDispatchToProps,
+  mapStateToProps
+} from './login-connector'
 import './login.css'
 
+@connect(mapStateToProps, mapDispatchToProps)
 export default class Login extends Component {
   render() {
     return (
