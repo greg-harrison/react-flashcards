@@ -10,6 +10,9 @@ import Signup from './components/user/signup'
 import Stack from './components/stack'
 
 import ProtectedRoute from './components/route_components/protectedRoute'
+import { Provider } from 'react-redux';
+
+import configureStore from './store/store'
 
 const fakeAuth = {
   isAuthenticated: false,
@@ -24,17 +27,19 @@ const fakeAuth = {
 }
 
 const App = () => (
-  <Router>
-    <div className="app-wrapper">
-      <div className="user-entry-wrapper">
-        <Route exact={true} path='/login' component={Login} />
-        <Route exact={true} path='/signup' component={Signup} />
-      </div>
+  <Provider store={configureStore}>
+    < Router >
+      <div className="app-wrapper">
+        <div className="user-entry-wrapper">
+          <Route exact={true} path='/login' component={Login} />
+          <Route exact={true} path='/signup' component={Signup} />
+        </div>
 
-      <ProtectedRoute auth={fakeAuth} path='/' component={Landing} />
-      <ProtectedRoute auth={fakeAuth} path='/stack/:stackId' component={Stack} />
-    </div>
-  </Router>
+        <ProtectedRoute auth={fakeAuth} path='/' component={Landing} />
+        <ProtectedRoute auth={fakeAuth} path='/stack/:stackId' component={Stack} />
+      </div>
+    </Router >
+  </Provider>
 );
 
 export default App
