@@ -1,12 +1,12 @@
 import types from './types';
 
 const initialState = {
-  user: {
-    id: '',
-    name: '',
-    email: '',
-    password: ''
-  }
+  id: '',
+  name: '',
+  pass: '',
+  passError: false,
+  email: '',
+  isRegistered: false,
 };
 
 const recordListReducer = (state = initialState, action) => {
@@ -24,12 +24,18 @@ const recordListReducer = (state = initialState, action) => {
     }
 
     case types.INPUT_USER_NAME: {
-      // Updating the typing of a user name
-
+      if (action.result) {
+        console.log('action.result', action.result);
+        return true
+      }
     }
 
     case types.INPUT_USER_EMAIL: {
       // Updating the user email during input - run validations and so on
+      if (action.result) {
+        console.log('action.result', action.result);
+        return true
+      }
     }
 
     default: return state
