@@ -13,6 +13,7 @@ import ProtectedRoute from './components/route_components/protectedRoute'
 import { Provider } from 'react-redux';
 
 import configureStore from './store/store'
+const initialState = {}
 
 const fakeAuth = {
   isAuthenticated: false,
@@ -27,7 +28,7 @@ const fakeAuth = {
 }
 
 const App = () => (
-  <Provider store={configureStore}>
+  <Provider store={configureStore(initialState)}>
     < Router >
       <div className="app-wrapper">
         <div className="user-entry-wrapper">
