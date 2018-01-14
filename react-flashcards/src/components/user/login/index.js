@@ -19,7 +19,10 @@ export default class Login extends Component {
           <div className="card-body">
             <form>
               <label className="d-block">
-                <input value={'test'} placeholder="email" />
+                <input
+                  value={this.props.user.email}
+                  onChange={this.props.inputUserEmail}
+                  placeholder="email" />
               </label>
               <label className="d-block">
                 <input value={'pass'} placeholder="password" type="password" />
