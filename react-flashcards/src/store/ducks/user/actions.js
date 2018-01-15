@@ -30,7 +30,9 @@ export const inputUserName = (text) => ({
 
 export const inputUserEmail = (text) => ({
   type: types.INPUT_USER_EMAIL,
-  text
+  payload: {
+    text
+  }
 });
 
 export const inputUserPassword = (text) => ({
