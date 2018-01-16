@@ -1,8 +1,28 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux'
+import autobind from 'autobind-decorator'
+import {
+  mapDispatchToProps,
+  mapStateToProps
+} from './signup-connector'
 import './signup.css'
 
+@connect(mapStateToProps, mapDispatchToProps)
 export default class Signup extends Component {
+  @autobind
+  handleInputName(event) {
+    this.props.inputUserName(event.target.value)
+  }
+  @autobind
+  handleInputEmail(event) {
+    this.props.inputUserEmail(event.target.value)
+  }
+  @autobind
+  handleInputPassword(event) {
+    this.props.inputUserPassword(event.target.value)
+  }
+
   render() {
     return (
       <div className="user-entry signup justify-content-center m-0 p-0 text-center">
@@ -13,10 +33,22 @@ export default class Signup extends Component {
           <div className="card-body">
             <form>
               <label className="d-block">
-                <input value={'test'} placeholder="email" />
+                <input
+                  onBlur={this.handleInputName}
+                  type="text"
+                  placeholder="name" />
               </label>
               <label className="d-block">
-                <input value={'pass'} placeholder="password" type="password" />
+                <input
+                  onBlur={this.handleInputEmail}
+                  type="text"
+                  placeholder="email" />
+              </label>
+              <label className="d-block">
+                <input
+                  onBlur={this.handleInputPassword}
+                  placeholder="password"
+                  type="password" />
               </label>
             </form>
           </div>
