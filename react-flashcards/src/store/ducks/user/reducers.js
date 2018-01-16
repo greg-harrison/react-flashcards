@@ -35,13 +35,11 @@ const recordListReducer = (state = initialState, action) => {
     }
 
     case types.INPUT_USER_EMAIL: {
-      // Updating the user email during input - run validations and so on
-      console.log('action.payload', action.payload);
-
       if (action.result) {
-        console.log('action.result', action.result);
         return Object.assign({}, state, {
-          name: action.result.text
+          user: {
+            email: action.result.text
+          }
         })
       }
     }

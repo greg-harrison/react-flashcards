@@ -9,6 +9,9 @@ import './login.css'
 
 @connect(mapStateToProps, mapDispatchToProps)
 export default class Login extends Component {
+  handleInputEmail(event) {
+    this.props.inputUserEmail(event.target.value)
+  }
   render() {
     return (
       <div className="user-entry login justify-content-center m-0 p-0 text-center">
@@ -21,7 +24,7 @@ export default class Login extends Component {
               <label className="d-block">
                 <input
                   value={this.props.user.email}
-                  onChange={this.props.inputUserEmail}
+                  onChange={event => this.handleInputEmail(event)}
                   placeholder="email" />
               </label>
               <label className="d-block">
