@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import {
   inputUserEmail,
+  inputUserName,
   inputUserPassword
 } from '../../../store/ducks/user/actions'
 
-const getUser = data => data.user
-const getEmail = data => data.user.email
-
 export const mapDispatchToProps = (dispatch, state) => (
   {
+    inputUserName: (value) => (
+      dispatch(inputUserName(value))
+    ),
     inputUserEmail: (value) => (
       dispatch(inputUserEmail(value))
     ),
@@ -18,9 +19,4 @@ export const mapDispatchToProps = (dispatch, state) => (
   }
 )
 
-export const mapStateToProps = (state, props) => (
-  {
-    user: getUser(state),
-    email: getEmail(state)
-  }
-)
+export const mapStateToProps = (state, props) => ({})
