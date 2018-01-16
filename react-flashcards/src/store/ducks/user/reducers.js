@@ -25,20 +25,31 @@ const recordListReducer = (state = initialState, action) => {
 
     case types.INPUT_USER_NAME: {
       if (action.result) {
-        console.log('action.result', action.result);
         return Object.assign({}, state, {
           user: {
-            name: action.result.text
+            name: action.text
           }
         })
       }
     }
 
     case types.INPUT_USER_EMAIL: {
+      return Object.assign({}, state, {
+        email: action.text
+      })
+    }
+
+    case types.INPUT_USER_PASSWORD: {
+      return Object.assign({}, state, {
+        password: action.text
+      })
+    }
+
+    case types.LOGIN_USER: {
       if (action.result) {
         return Object.assign({}, state, {
           user: {
-            email: action.result.text
+            isRegistered: true
           }
         })
       }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
+import autobind from 'autobind-decorator'
 import {
   mapDispatchToProps,
   mapStateToProps
@@ -9,9 +10,15 @@ import './login.css'
 
 @connect(mapStateToProps, mapDispatchToProps)
 export default class Login extends Component {
+  @autobind
   handleInputEmail(event) {
     this.props.inputUserEmail(event.target.value)
   }
+  @autobind
+  handleInputPassword(event) {
+    this.props.inputUserPassword(event.target.value)
+  }
+
   render() {
     return (
       <div className="user-entry login justify-content-center m-0 p-0 text-center">
@@ -23,12 +30,15 @@ export default class Login extends Component {
             <form>
               <label className="d-block">
                 <input
-                  value={this.props.user.email}
-                  onChange={event => this.handleInputEmail(event)}
+                  type="text"
+                  onBlur={this.handleInputEmail}
                   placeholder="email" />
               </label>
               <label className="d-block">
-                <input value={'pass'} placeholder="password" type="password" />
+                <input
+                  onBlur={this.handleInputPassword}
+                  placeholder="password"
+                  type="password" />
               </label>
             </form>
           </div>
