@@ -35,29 +35,42 @@ export default class Signup extends Component {
               <label className="d-block">
                 <input
                   onBlur={this.handleInputName}
+                  tabIndex={1}
                   type="text"
                   placeholder="name" />
               </label>
               <label className="d-block">
                 <input
                   onBlur={this.handleInputEmail}
+                  tabIndex={2}
                   type="text"
                   placeholder="email" />
               </label>
               <label className="d-block">
                 <input
                   onBlur={this.handleInputPassword}
+                  tabIndex={3}
                   placeholder="password"
                   type="password" />
               </label>
             </form>
           </div>
-          <Link to="/login">Already have an account? Log in!</Link>
+          <Link
+            tabIndex={4}
+            to="/login">
+            <span>
+              Already have an account? Log in!
+            </span>
+          </Link>
           <div className="card-footer">
-            <button className="btn btn-main" type="submit">Signup</button>
+            <button
+              tabIndex={3}
+              className="btn btn-main"
+              type="submit"
+            >Signup</button>
           </div>
         </div>
-      </div >
+      </div>
     )
   }
 }

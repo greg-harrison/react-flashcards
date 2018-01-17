@@ -34,6 +34,9 @@ exports.createUser = function (req, res, next) {
 
 exports.loginUser = function (req, res, next) {
   let body = req.body
+
+  console.log('body', body);
+
   db.one('select * from public.user where email = $1', body.email)
     .then(function (data) {
       if (helpers.comparePass(body.pass, data.password)) {

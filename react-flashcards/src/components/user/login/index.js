@@ -18,6 +18,11 @@ export default class Login extends Component {
   handleInputPassword(event) {
     this.props.inputUserPassword(event.target.value)
   }
+  @autobind
+  handleUserLogin(event) {
+    event.preventDefault()
+    this.props.loginUser()
+  }
 
   render() {
     return (
@@ -44,7 +49,10 @@ export default class Login extends Component {
           </div>
           <Link to="/signup">Don't have an account? Sign up!</Link>
           <div className="card-footer">
-            <button className="btn btn-main" type="submit">Login</button>
+            <button
+              className="btn btn-main"
+              onClick={this.handleUserLogin}
+            >Login</button>
           </div>
         </div>
       </div >
