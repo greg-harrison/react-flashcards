@@ -42,6 +42,7 @@ const recordListReducer = (state = initialState, action) => {
     }
 
     case types.LOGIN_USER: {
+      console.log('process.env', process.env);
       if (action.result) {
         return Object.assign({}, state, {
           user: {
