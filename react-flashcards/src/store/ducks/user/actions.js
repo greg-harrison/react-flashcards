@@ -14,28 +14,11 @@ export const fetchUser = (data) => ({
 
 export const loginUser = (data) => ({
   [CALL_API]: {
-    endpoint: API_ROOT + "/user/login",
+    types: [types.LOGIN_USER, types.LOGIN_USER_SUCCESS, types.LOGIN_USER_FAIL],
+    endpoint: 'http://localhost:8081/user/login',
     method: 'POST',
-    types: [
-      types.LOGIN_USER,
-      //{
-      //  type: types.LOGIN_USER,
-      //  payload: { data: data }
-      //},
-      {
-        type: types.LOGIN_USER_SUCCESS,
-        payload: (action, state, res) => {
-          console.log('res', res);
-
-          const contentType = res.headers.get('Content-Type');
-          if (contentType && ~contentType.indexOf('json')) {
-            // Just making sure res.json() does not raise an error
-            return res.json()
-          }
-        }
-      },
-      types.LOGIN_USER_FAIL
-    ]
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
   }
 });
 

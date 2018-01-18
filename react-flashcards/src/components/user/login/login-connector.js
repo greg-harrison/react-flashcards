@@ -16,7 +16,7 @@ export const mapDispatchToProps = (dispatch, state) => (
     inputUserPassword: (value) => (
       dispatch(inputUserPassword(value))
     ),
-    loginUser: () => dispatch(loginUser()),
+    loginUser: () => dispatch(loginUser(state.user)),
   }
 )
 
