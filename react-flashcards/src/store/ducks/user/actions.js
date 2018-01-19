@@ -1,4 +1,4 @@
-import { CALL_API } from 'redux-api-middleware'
+import { RSAA } from 'redux-api-middleware'
 import types from "./types";
 
 const API_ROOT = process.env.R_FLASHCARD_API_URL
@@ -13,7 +13,7 @@ export const fetchUser = (data) => ({
 });
 
 export const loginUser = (data) => ({
-  [CALL_API]: {
+  [RSAA]: {
     types: [types.LOGIN_USER, types.LOGIN_USER_SUCCESS, types.LOGIN_USER_FAIL],
     endpoint: 'http://localhost:8081/user/login',
     method: 'POST',
