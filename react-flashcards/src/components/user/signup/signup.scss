@@ -1,3 +1,9 @@
+@import '../../../style/imports/_variables.scss';
+
 .signup {
   width:100%;
+  .btn-main{
+    background-color: $pale-purple;
+    color: $black-purple;
+  }
 }
