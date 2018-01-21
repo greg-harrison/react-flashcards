@@ -1,2 +1,5 @@
 .signup {
   width: 100%; }
+  .signup .btn-main {
+    background-color: #E6E1EF;
+    color: #060011; }
