@@ -45,9 +45,20 @@ const recordListReducer = (state = initialState, action) => {
     }
 
     case types.INPUT_USER_PASSWORD: {
-      return Object.assign({}, state, {
-        password: action.text
-      })
+      let exp = new RegExp(/^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/g)
+
+      // asjdklAJK23@32@
+      // Must have 1 Uppercase, 1 lowercase, 1 symbol, 1 number
+
+      if (action.text.match(exp)) {
+        return Object.assign({}, state, {
+          password: ''
+        })
+      } else {
+        return Object.assign({}, state, {
+          password: action.text
+        })
+      }
     }
 
     case types.LOGIN_USER: {
