@@ -30,9 +30,18 @@ const recordListReducer = (state = initialState, action) => {
     }
 
     case types.INPUT_USER_EMAIL: {
-      return Object.assign({}, state, {
-        email: action.text
-      })
+      let exp = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)
+
+      if (action.text.match(exp)) {
+        return Object.assign({}, state, {
+          email: action.text
+        })
+      } else {
+        console.log('test');
+        return Object.assign({}, state, {
+          email: ''
+        })
+      }
     }
 
     case types.INPUT_USER_PASSWORD: {
