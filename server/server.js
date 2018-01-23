@@ -16,7 +16,7 @@ const port = process.env.R_FLASHCARD_BE_PORT || 8081
 const app = express()
 
 let corsOptions = {
-  "origin": 'http://localhost:8080',
+  "origin": 'http://localhost:8080' || 'http://localhost:3001',
   "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
   "preflightContinue": false,
   "optionsSuccessStatus": 204,
