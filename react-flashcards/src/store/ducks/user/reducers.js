@@ -11,17 +11,17 @@ const initialState = {
 
 const recordListReducer = (state = initialState, action) => {
   switch (action.type) {
-    case types.FETCH_USER: {
-      // This will pull the user from the database
+    // case types.FETCH_USER: {
+    //   // This will pull the user from the database
 
-      // return { ...state, user: action.payload.data.data.user }
-    }
+    //   // return { ...state, user: action.payload.data.data.user }
+    // }
 
-    case types.CREATE_USER: {
-      // Use Name, Email and Password to create a user in the backend
+    // case types.CREATE_USER: {
+    //   // Use Name, Email and Password to create a user in the backend
 
-      // return state.user = state.user.push(action.payload.draft)
-    }
+    //   // return state.user = state.user.push(action.payload.draft)
+    // }
 
     case types.INPUT_USER_NAME: {
       return Object.assign({}, state, {
@@ -37,7 +37,6 @@ const recordListReducer = (state = initialState, action) => {
           email: action.text
         })
       } else {
-        console.log('test');
         return Object.assign({}, state, {
           email: ''
         })
@@ -62,7 +61,7 @@ const recordListReducer = (state = initialState, action) => {
     }
 
     case types.LOGIN_USER: {
-      console.log('process.env', process.env);
+      console.log('action', action);
       if (action.result) {
         return Object.assign({}, state, {
           user: {

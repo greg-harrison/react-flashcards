@@ -14,11 +14,15 @@ export const fetchUser = (data) => ({
 
 export const loginUser = (data) => ({
   [RSAA]: {
-    types: [types.LOGIN_USER, types.LOGIN_USER_SUCCESS, types.LOGIN_USER_FAIL],
     endpoint: 'http://localhost:8081/user/login',
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data)
+    body: JSON.stringify(data),
+    types: [
+      types.LOGIN_USER,
+      types.LOGIN_USER_SUCCESS,
+      types.LOGIN_USER_FAIL
+    ],
   }
 });
 
