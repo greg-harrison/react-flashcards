@@ -1,4 +1,8 @@
 import types from './types';
+import {
+  verifyEmail,
+  verifyPassword
+} from '../../../../helpers'
 
 const initialState = {
   id: '',
@@ -23,55 +27,56 @@ const recordListReducer = (state = initialState, action) => {
     //   // return state.user = state.user.push(action.payload.draft)
     // }
 
-    case types.INPUT_USER_NAME: {
-      return Object.assign({}, state, {
-        name: action.text
-      })
-    }
-
-    case types.INPUT_USER_EMAIL: {
-      let exp = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)
-
-      if (action.text.match(exp)) {
+    case types.INPUT_USER_NAME:
+      {
         return Object.assign({}, state, {
-          email: action.text
-        })
-      } else {
-        return Object.assign({}, state, {
-          email: ''
+          name: action.text
         })
       }
-    }
 
-    case types.INPUT_USER_PASSWORD: {
-      let exp = new RegExp(/^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/g)
-
-      // asjdklAJK23@32@
-      // Must have 1 Uppercase, 1 lowercase, 1 symbol, 1 number
-
-      if (action.text.match(exp)) {
-        return Object.assign({}, state, {
-          password: ''
-        })
-      } else {
-        return Object.assign({}, state, {
-          password: action.text
-        })
+    case types.INPUT_USER_EMAIL:
+      {
+        if (verifyEmail(action.text)) {
+          return Object.assign({}, state, {
+            email: action.text
+          })
+        } else {
+          return Object.assign({}, state, {
+            email: ''
+          })
+        }
       }
-    }
 
-    case types.LOGIN_USER: {
-      console.log('action', action);
-      if (action.result) {
-        return Object.assign({}, state, {
-          user: {
-            isRegistered: true
-          }
-        })
+    case types.INPUT_USER_PASSWORD:
+      {
+        // asjdklAJK23@32@
+        // Must have 1 Uppercase, 1 lowercase, 1 symbol, 1 number
+
+        if (verifyPassword(action.text)) {
+          return Object.assign({}, state, {
+            password: ''
+          })
+        } else {
+          return Object.assign({}, state, {
+            password: action.text
+          })
+        }
       }
-    }
 
-    default: return state
+    case types.LOGIN_USER:
+      {
+        console.log('action', action);
+        if (action.result) {
+          return Object.assign({}, state, {
+            user: {
+              isRegistered: true
+            }
+          })
+        }
+      }
+
+    default:
+      return state
   }
 }
 

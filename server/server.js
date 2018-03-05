@@ -12,7 +12,6 @@ const session = require('express-session')
 
 const port = process.env.R_FLASHCARD_BE_PORT || 8081
 
-
 const app = express()
 
 let corsOptions = {
