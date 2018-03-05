@@ -2,7 +2,7 @@ import types from './types';
 import {
   verifyEmail,
   verifyPassword
-} from '../../../../helpers'
+} from '../../../helpers'
 
 const initialState = {
   id: '',
