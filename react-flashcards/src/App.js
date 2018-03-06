@@ -29,7 +29,7 @@ const fakeAuth = {
 
 const App = () => (
   <Provider store={configureStore(initialState)}>
-    < Router >
+    <Router>
       <div className="app-wrapper">
         <div className="user-entry-wrapper">
           <Route exact={true} path='/login' component={Login} />
@@ -39,7 +39,7 @@ const App = () => (
         <ProtectedRoute auth={fakeAuth} path='/' component={Landing} />
         <ProtectedRoute auth={fakeAuth} path='/stack/:stackId' component={Stack} />
       </div>
-    </Router >
+    </Router>
   </Provider>
 );
 

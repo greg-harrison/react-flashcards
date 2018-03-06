@@ -2,11 +2,10 @@ let emailRegularExpresion = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\
 
 let passwordRegularExpression = new RegExp(/^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/g)
 
-export const verifyEmail = (value) => {
-  console.log('value2', value);
-  return value.match(emailRegularExpresion)
-}
+export const verifyEmail = (value) => (
+  emailRegularExpresion.test(value)
+)
 
 export const verifyPassword = (value) => (
-  value.match(passwordRegularExpression)
+  passwordRegularExpression.test(value)
 )
