@@ -1,13 +1,21 @@
 import { verifyEmail, verifyPassword } from './index'
 
-it('Returns Invalid for ajkdjsljdsa', () => {
+it('Email returns Invalid for ajkdjsljdsa', () => {
   let email = 'ajkdjsljdsa'
-  console.log('verifyEmail(email)', verifyEmail(email));
   expect(verifyEmail(email)).toBe(false)
 });
 
-it('Returns Valid for ajkdjsljdsa@test.com', () => {
+it('Email returns Valid for ajkdjsljdsa@test.com', () => {
   let email = 'ajkdjsljdsa@test.com'
-  console.log('verifyEmail(email)', verifyEmail(email));
   expect(verifyEmail(email)).toBe(true)
+});
+
+it('Password returns Invalid for Test', () => {
+  let pw = 'ajkdjsljdsa'
+  expect(verifyPassword(pw)).toBe(false)
+});
+
+it('Password returns Valid for ajkdjsljdsa@test.com', () => {
+  let pw = 'asjdklAJK23@32@'
+  expect(verifyPassword(pw)).toBe(true)
 });
