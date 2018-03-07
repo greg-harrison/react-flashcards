@@ -29,21 +29,24 @@ const recordListReducer = (state = initialState, action) => {
 
     case types.INPUT_USER_NAME:
       {
-        return Object.assign({}, state, {
+        return {
+          ...state,
           name: action.text
-        })
+        }
       }
 
     case types.INPUT_USER_EMAIL:
       {
         if (verifyEmail(action.text)) {
-          return Object.assign({}, state, {
+          return {
+            ...state,
             email: action.text
-          })
+          }
         } else {
-          return Object.assign({}, state, {
+          return {
+            ...state,
             email: ''
-          })
+          }
         }
       }
 
@@ -53,25 +56,28 @@ const recordListReducer = (state = initialState, action) => {
         // Must have 1 Uppercase, 1 lowercase, 1 symbol, 1 number
 
         if (verifyPassword(action.text)) {
-          return Object.assign({}, state, {
+          return {
+            ...state,
             password: ''
-          })
+          }
         } else {
-          return Object.assign({}, state, {
+          return {
+            ...state,
             password: action.text
-          })
+          }
         }
       }
 
     case types.LOGIN_USER:
       {
-        console.log('action', action);
         if (action.result) {
-          return Object.assign({}, state, {
+          return {
+            ...state,
             user: {
+              ...state.user,
               isRegistered: true
             }
-          })
+          }
         }
       }
 
