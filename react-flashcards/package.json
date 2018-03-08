@@ -103,5 +103,9 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "devDependencies": {
+    "rekit-core": "^2.2.5",
+    "rekit-studio": "^2.2.4"
   }
 }
