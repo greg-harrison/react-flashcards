@@ -11,6 +11,8 @@ class Landing extends Component {
   constructor(props) {
     super(props)
 
+    console.log('props', props);
+
     this.landingUserStacks = this.landingUserStacks.bind(this)
   }
 

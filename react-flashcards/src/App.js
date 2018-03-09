@@ -27,16 +27,16 @@ const fakeAuth = {
   }
 }
 
-// <div className="user-entry-wrapper">
-//   <Route exact={true} path='/login' component={Login} />
-//   <Route exact={true} path='/signup' component={Signup} />
-// </div>
 const App = () => (
   <Provider store={configureStore(initialState)}>
     <Router>
       <div className="app-wrapper">
+        {!fakeAuth.isAuthenticated && <div className="user-entry-wrapper">
+          <Route exact={true} path='/login' component={Login} />
+          <Route exact={true} path='/signup' component={Signup} />
+        </div>}
 
-        <ProtectedRoute auth={fakeAuth} path='/' component={Landing} />
+        <ProtectedRoute exact={true} auth={fakeAuth} path='/' component={Landing} />
         <ProtectedRoute auth={fakeAuth} path='/stack/:stackId' component={Stack} />
       </div>
     </Router>
