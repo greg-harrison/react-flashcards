@@ -12,7 +12,6 @@ import './login.css'
 export default class Login extends Component {
   @autobind
   handleInputEmail(event) {
-    console.log('djsadk');
     this.props.inputUserEmail(event.target.value)
   }
   @autobind
