@@ -36,7 +36,7 @@ const App = () => (
           <Route exact={true} path='/signup' component={Signup} />
         </div>}
 
-        <ProtectedRoute exact={true} auth={fakeAuth} path='/' component={Landing} />
+        <ProtectedRoute auth={fakeAuth} path='*' component={Landing} />
         <ProtectedRoute auth={fakeAuth} path='/stack/:stackId' component={Stack} />
       </div>
     </Router>

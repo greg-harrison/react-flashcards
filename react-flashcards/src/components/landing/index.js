@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './landing.css'
+import PropTypes from 'prop-types'
 import Stack from '../stack'
 import { map } from 'lodash'
 import MockData from './MockData'
@@ -8,6 +9,10 @@ import StackList from '../stacklist'
 import Header from '../base_components/header'
 
 class Landing extends Component {
+  static propTypes = {
+    auth: PropTypes.object
+  }
+
   constructor(props) {
     super(props)
 
