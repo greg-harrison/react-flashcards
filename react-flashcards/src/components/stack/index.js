@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from '../card'
+import { Link } from 'react-router-dom';
 import { map } from 'lodash'
 import MockData from '../landing/MockData'
 
@@ -34,6 +35,13 @@ const Stack = () => {
 
   return (
     <div>
+      <div>
+        <Link
+          to={'/'}
+        >
+          Back to Home
+        </Link>
+      </div>
       {MockData[0].title}
       {builtStackList}
     </div>
