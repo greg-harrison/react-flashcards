@@ -1,14 +1,12 @@
 import React from 'react';
 import './header.css'
 
-const Header = ({ isLoggedIn }) => {
+const Header = ({ isLoggedIn, children }) => {
   return (
     isLoggedIn &&
     <div className="header">
-      <span>
-        Header
-      </span>
-    </div >
+      {children}
+    </div>
   )
 }
 

@@ -3,6 +3,7 @@ import Card from '../card'
 import { Link } from 'react-router-dom';
 import { map } from 'lodash'
 import MockData from '../landing/MockData'
+import Header from '../base_components/header'
 
 // To be Connected by redux
 const Stack = () => {
@@ -36,11 +37,13 @@ const Stack = () => {
   return (
     <div>
       <div>
-        <Link
-          to={'/'}
-        >
-          Back to Home
+        <Header isLoggedIn={true}>
+          <Link
+            to={'/'}
+          >
+            Back to Home
         </Link>
+        </Header>
       </div>
       {MockData[0].title}
       {builtStackList}
