@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './landing.css'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom';
 import Stack from '../stack'
 import { map } from 'lodash'
 import MockData from './MockData'
@@ -30,7 +31,13 @@ class Landing extends Component {
   render() {
     return (
       <div className="landing w-100 m-0">
-        <Header isLoggedIn={true} />
+        <Header isLoggedIn={true}>
+          <Link
+            to={'/'}
+          >
+            Back to Home
+        </Link>
+        </Header>
         {this.landingUserStacks()}
       </div>
     )
