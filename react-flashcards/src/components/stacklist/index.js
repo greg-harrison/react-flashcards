@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types'
 import './stackList.css';
 
 const StackList = ({ list }) => (
@@ -14,8 +15,12 @@ const StackList = ({ list }) => (
       <span className="createdDate col-6 text-right">
         Count: {list.numCards}
       </span>
-    </Link >
+    </Link>
   </div>
 )
+
+StackList.propTypes = {
+  list: PropTypes.array
+}
 
 export default StackList
