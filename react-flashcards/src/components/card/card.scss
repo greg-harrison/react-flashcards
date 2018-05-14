@@ -3,6 +3,10 @@
   margin: 0 auto 1rem;
   padding: 2rem;
 
+  &:hover {
+    background-color: darken(white, 5%);
+  }
+
   .card-side {
     position: absolute;
     top: 0;
