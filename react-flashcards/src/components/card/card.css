@@ -2,6 +2,8 @@
   width: 90%;
   margin: 0 auto 1rem;
   padding: 2rem; }
+  .card:hover {
+    background-color: #f2f2f2; }
   .card .card-side {
     position: absolute;
     top: 0;

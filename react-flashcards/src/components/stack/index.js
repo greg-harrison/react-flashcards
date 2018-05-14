@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { map } from 'lodash'
 import MockData from '../landing/MockData'
 import Header from '../base_components/header'
+import './stack.css'
 
 // To be Connected by redux
 const Stack = () => {
@@ -35,7 +36,7 @@ const Stack = () => {
   )
 
   return (
-    <div>
+    <div className="stackPage">
       <div>
         <Header isLoggedIn={true}>
           <Link
@@ -45,7 +46,7 @@ const Stack = () => {
         </Link>
         </Header>
       </div>
-      {MockData[0].title}
+      <div className="stackTitle">{MockData[0].title}</div>
       {builtStackList}
     </div>
   )
