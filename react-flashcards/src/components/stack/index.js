@@ -13,6 +13,7 @@ const Stack = () => {
     (item) => {
       return (
         <Card
+          resetCards={true}
           key={item.id}>
           <Card.Front>
             <span className="card-side">
@@ -47,6 +48,7 @@ const Stack = () => {
         </Header>
       </div>
       <div className="stackTitle">{MockData[0].title}</div>
+      <p><button >Reset All</button> - Might need to actually have a constructor and state to handle this</p>
       {builtStackList}
     </div>
   )

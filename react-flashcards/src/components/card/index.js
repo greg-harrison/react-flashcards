@@ -21,6 +21,12 @@ class Card extends Component {
       () => this.props.onToggle(this.state.faceup),
     )
 
+  reset = () =>
+    this.setState(
+      ({ faceup }) => ({ faceup: true }),
+      () => this.props.onToggle(this.state.faceup),
+    )
+
   render() {
     const children = React.Children.map(
       this.props.children,
@@ -32,7 +38,7 @@ class Card extends Component {
     )
 
     return (
-      <div className="card container" onClick={this.toggle}>
+      <div className="card container" onClick={this.toggle} resetCards={this.reset}>
         {children}
       </div>
     )
