@@ -34,6 +34,7 @@ class Card extends Component {
         React.cloneElement(child, {
           faceup: this.state.faceup,
           toggle: this.toggle,
+          resetCards: this.reset
         })
     )
 
