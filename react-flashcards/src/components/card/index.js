@@ -39,7 +39,7 @@ class Card extends Component {
     )
 
     return (
-      <div className="card container" onClick={this.toggle} resetCards={this.reset}>
+      <div className={"card container " + (this.state.faceup ? 'front' : 'back')} onClick={this.toggle} resetCards={this.reset}>
         {children}
       </div>
     )
