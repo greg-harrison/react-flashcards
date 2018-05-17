@@ -4,6 +4,10 @@
   padding: 2rem; }
   .card:hover {
     background-color: #f2f2f2; }
+  .card.front {
+    border: solid black 1px; }
+  .card.back {
+    border: solid navy 1px; }
   .card .card-side {
     position: absolute;
     top: 0;
